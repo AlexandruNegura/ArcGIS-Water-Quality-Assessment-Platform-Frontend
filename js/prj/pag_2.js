@@ -1,12 +1,9 @@
 $(document).ready(function () {
     let legendToggle = true;
     $("#legend-toggle").click(function () {
-        if (legendToggle) {
-            document.getElementById("legend-container").style.display="block";
-        } else {
-            document.getElementById("legend-container").style.display="none";
-        }
-
+        legendToggle ?
+            document.getElementById("legend-container").style.display = "block" :
+            document.getElementById("legend-container").style.display = "none";
         legendToggle = !legendToggle;
     });
 
@@ -17,6 +14,7 @@ $(document).ready(function () {
         "dijit/layout/ContentPane",
         "dojo/dom",
         "esri/map",
+        "esri/layers/ArcGISDynamicMapServiceLayer",
         "esri/urlUtils",
         "esri/arcgis/utils",
         "esri/dijit/Legend",
@@ -29,6 +27,7 @@ $(document).ready(function () {
         ContentPane,
         dom,
         Map,
+        ArcGISDynamicMapServiceLayer,
         urlUtils,
         arcgisUtils,
         Legend,
@@ -39,22 +38,26 @@ $(document).ready(function () {
             parser.parse();
 
             arcgisUtils.createMap("903ca98573374d419b4defafaf6342e6", "map").then(function (response) {
-                //update the app
                 dom.byId("title").innerHTML = response.itemInfo.item.title;
                 dom.byId("subtitle").innerHTML = response.itemInfo.item.snippet;
 
-                var map = response.map;
+                let map = response.map;
+                let layerIds = map.graphicsLayerIds;
+                let visibleLayerName = "Azot";
 
-                //add the scalebar
-                var scalebar = new Scalebar({
+                for (let i = 0; i < layerIds.length; i++) {
+                    let layer = map.getLayer(layerIds[i]);
+                    if (layer.name !== visibleLayerName)
+                        layer.hide();
+                }
+
+                let scalebar = new Scalebar({
                     map: map,
                     scalebarUnit: "english"
                 });
 
-                //add the legend. Note that we use the utility method getLegendLayers to get
-                //the layers to display in the legend from the createMap response.
-                var legendLayers = arcgisUtils.getLegendLayers(response);
-                var legendDijit = new Legend({
+                let legendLayers = arcgisUtils.getLegendLayers(response);
+                let legendDijit = new Legend({
                     map: map,
                     layerInfos: legendLayers
                 }, "legend");

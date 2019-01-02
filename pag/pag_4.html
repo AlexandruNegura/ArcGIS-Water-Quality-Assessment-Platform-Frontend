@@ -27,9 +27,21 @@
 
 <body style="overflow: hidden; background-color: transparent">
 
-<span class="wtext">
-    CONTINUT PAGINA CONTINUT PAGINA CONTINUT PAGINA CONTINUT PAGINA CONTINUT PAGINA CONTINUT PAGINA
-</span>
+<div style="display: none" id="title"></div>
+<div style="display: none" id="subtitle"></div>
+
+<div style="width: 100%; margin-bottom: 5px" align="right">
+    <div class="btn btn-success" id="legend-toggle"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+</div>
+
+<div id="map-container" class="transition" style="height: 100%; width: 100%; overflow: hidden; border-radius: 10px; display: inline-block">
+    <div class="full" id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
+</div>
+
+<div id="legend-container" style="display: none;" class="legend-box">
+    <div class="full" id="legend"></div>
+</div>
+
 
 <!-- Page specific -->
 <script src="../js/prj/pag_4.js"></script>
