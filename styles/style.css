@@ -1,0 +1,166 @@
+body, html {
+    height: 100%;
+}
+
+.login-body {
+    background-image: url("../res/bkg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.full-h {
+    height: 100vh;
+}
+
+.padding-5 {
+    padding: 5px;
+}
+
+.full {
+    height: 100%;
+    width: 100%;
+}
+
+.full-rounded {
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.flex-container {
+    display: flex;
+    height: 85vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container > div {
+    width: 100px;
+    margin: 10px;
+}
+
+.vertical-text {
+    line-height: 5%;
+}
+
+.form-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.main-box {
+    height: 95%;
+    margin: 0;
+    padding: 5px;
+}
+
+.menu-container {
+    background-image: url("../res/wood.jpg");
+    background-size: cover;
+    border-radius: 10px;
+
+    height: 100%;
+    width: 100%;
+    padding: 3px;
+}
+
+.content-container {
+    background-image: url("../res/wood.jpg");
+    background-size: cover;
+    border-radius: 10px;
+
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+}
+
+.footer-container {
+    display: table;
+    height: 5%;
+    padding: 3px;
+}
+
+.footer {
+    background-image: url("../res/wood.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.avatar {
+    width: 75px;
+    height: 75px;
+
+    border: 1px solid black;
+    border-radius: 100%;
+}
+
+.wtext {
+    font-size: 18px;
+    color: white;
+}
+
+.username {
+    color: white;
+}
+
+.menu-button {
+    vertical-align: middle;
+    position: relative;
+    padding: 10px;
+    margin-top: 5px;
+    height: 50px;
+    width: 100%;
+}
+
+.menu-button::before,
+.menu-button::after {
+    content: url("../res/rope.png");
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+
+    width: 10px;
+    height: 20px;
+
+    z-index: 999;
+}
+
+.menu-button::after {
+    position: absolute;
+    bottom: 0;
+    left: 95%;
+}
+
+.menu-button-last {
+
+}
+
+.menu-button-last::before,
+.menu-button-last::after {
+    content: "";
+}
+
+.transition {
+    -webkit-transition: 300ms linear;
+    -moz-transition: 300ms linear;
+    -o-transition: 300ms linear;
+    -ms-transition: 300ms linear;
+    transition: 300ms linear;
+}
+
+.legend-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute !important;
+    border: 1px solid dimgray;
+    border-radius: 5px;
+
+    bottom: 5px;
+    right: 5px;
+    width: 25%;
+}

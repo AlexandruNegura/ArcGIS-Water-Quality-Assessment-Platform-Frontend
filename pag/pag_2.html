@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="../res/water.png">
+    <title>Poliloco</title>
+
+    <!-- jQuery & socket.io stuff -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+    <!-- Bootstrap stuff -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css"/>
+
+    <!-- GIS specific syles -->
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+
+    <!-- Styles -->
+    <link href="../styles/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body style="overflow: hidden; background-color: transparent">
+
+<div style="display: none" id="title"></div>
+<div style="display: none" id="subtitle"></div>
+
+<div style="width: 100%; margin-bottom: 5px" align="right">
+    <div class="btn btn-success" id="legend-toggle"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+</div>
+
+<div id="map-container" class="transition" style="height: 100%; width: 100%; overflow: hidden; border-radius: 10px; display: inline-block">
+    <div class="full" id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
+</div>
+
+<div id="legend-container" style="display: none;" class="legend-box">
+    <div class="full" id="legend"></div>
+</div>
+
+
+<!-- Page specific -->
+<script src="../js/prj/pag_2.js"></script>
+<script src="../js/prj/utils.js"></script>
+<script src="https://js.arcgis.com/3.27/"></script>
+
+</body>
+</html>
