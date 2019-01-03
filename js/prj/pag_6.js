@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     require([
             "esri/Map",
             "esri/views/MapView",
@@ -6,11 +7,14 @@ $(document).ready(function () {
             "esri/Graphic",
             "esri/widgets/Expand",
             "esri/widgets/FeatureForm",
-            "esri/widgets/FeatureTemplates"
+            "esri/widgets/FeatureTemplates",
+            "esri/widgets/ScaleBar",
         ],
         function (
-            Map, MapView, FeatureLayer, Graphic, Expand,
-            FeatureForm, FeatureTemplates
+            Map,
+            MapView, FeatureLayer, Graphic, Expand,
+            FeatureForm, FeatureTemplates,
+            Scalebar
         ) {
 
             let editFeature, highlight;
@@ -39,6 +43,11 @@ $(document).ready(function () {
                 map: map,
                 center: [24.518385, 46.530043],
                 zoom: 14
+            });
+
+            let scalebar = new Scalebar({
+                map: map,
+                scalebarUnit: "english"
             });
 
             // New FeatureForm and set its layer to 'Incidents' FeatureLayer.
