@@ -71,6 +71,8 @@ $(document).ready(function () {
 				/* Creating the time slider */
 				let timeSlider = new TimeSlider({}, dom.byId("timeSliderDiv"));
 				map.setTimeSlider(timeSlider);
+
+				timeSlider.setThumbMovingRate(2000);
 				timeSlider.setThumbCount(2);
 				timeSlider.setLoop(true);
 
