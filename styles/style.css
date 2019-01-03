@@ -72,7 +72,7 @@ body, html {
 
     height: 100%;
     width: 100%;
-    padding: 15px;
+    padding: 5px;
 }
 
 .footer-container {
@@ -163,4 +163,26 @@ body, html {
     bottom: 5px;
     right: 5px;
     width: 25%;
+}
+
+.time-slider-container {
+    height: 80px;
+    width: 100%;
+    background-color: rgba(249, 252, 243, 0.7);
+    border-radius: 5px
+}
+
+.map-container {
+    position: relative;
+    height: calc(100% - 50px - 80px);
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    display: inline-block
+}
+
+.toolbox-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }

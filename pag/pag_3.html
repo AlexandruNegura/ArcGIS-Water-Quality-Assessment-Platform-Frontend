@@ -30,16 +30,27 @@
 <div style="display: none" id="title"></div>
 <div style="display: none" id="subtitle"></div>
 
-<div style="width: 100%; margin-bottom: 5px" align="right">
-    <div class="btn btn-success" id="legend-toggle"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+<div style="width: 100%; margin-bottom: 5px; height: 50px; position: relative">
+    <span class="wtext" style="font-family: 'Open Sans'"><h3>Water temperature evolution</h3></span>
+    <hr style="background-color: white; width: 100%">
+
+    <div class="toolbox-container">
+        <div class="btn btn-success" id="legend-toggle" style="display: inline-block;">
+            <i class="fa fa-eye-slash" aria-hidden="true"></i>
+        </div>
+    </div>
 </div>
 
-<div id="map-container" class="transition" style="height: 100%; width: 100%; overflow: hidden; border-radius: 10px; display: inline-block">
+<div id="map-container" class="map-container">
     <div class="full" id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
+    <div id="legend-container" style="display: block;" class="legend-box">
+        <div class="full" id="legend"></div>
+    </div>
 </div>
 
-<div id="legend-container" style="display: none;" class="legend-box">
-    <div class="full" id="legend"></div>
+<div class="time-slider-container" align="center">
+    <span id="daterange"></span>
+    <div id="timeSliderDiv"></div>
 </div>
 
 
