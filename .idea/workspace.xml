@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb38a8b5-f8ca-4624-9324-8172316b9ce3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/prj/pag_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/prj/pag_2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/prj/pag_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/prj/pag_3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/prj/pag_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/prj/pag_4.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/prj/pag_5.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/prj/pag_5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prj/pag_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/prj/pag_6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pag/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/pag/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pag/pag_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/pag/pag_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pag/pag_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/pag/pag_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pag/pag_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/pag/pag_4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pag/pag_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/pag/pag_5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pag/pag_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/pag/pag_6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,7 +19,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pag/main.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="919">
@@ -46,8 +37,44 @@
       <file leaf-file-name="pag_3.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/prj/pag_3.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="81" column="59" lean-forward="true" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
+            <state relative-caret-position="553">
+              <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pag_4.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/prj/pag_4.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="553">
+              <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pag_5.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/prj/pag_5.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pag_1.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/prj/pag_1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pag_2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/prj/pag_2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="664">
+              <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -78,16 +105,16 @@
         <option value="$PROJECT_DIR$/js/prj/pag_1.js" />
         <option value="$PROJECT_DIR$/styles/style.css" />
         <option value="$PROJECT_DIR$/pag/pag_2.html" />
-        <option value="$PROJECT_DIR$/js/prj/pag_2.js" />
         <option value="$PROJECT_DIR$/pag/pag_3.html" />
-        <option value="$PROJECT_DIR$/js/prj/pag_3.js" />
         <option value="$PROJECT_DIR$/pag/pag_4.html" />
         <option value="$PROJECT_DIR$/pag/pag_5.html" />
         <option value="$PROJECT_DIR$/js/prj/pag_6.js" />
         <option value="$PROJECT_DIR$/pag/pag_6.html" />
-        <option value="$PROJECT_DIR$/js/prj/pag_5.js" />
-        <option value="$PROJECT_DIR$/js/prj/pag_4.js" />
         <option value="$PROJECT_DIR$/pag/main.html" />
+        <option value="$PROJECT_DIR$/js/prj/pag_2.js" />
+        <option value="$PROJECT_DIR$/js/prj/pag_3.js" />
+        <option value="$PROJECT_DIR$/js/prj/pag_4.js" />
+        <option value="$PROJECT_DIR$/js/prj/pag_5.js" />
       </list>
     </option>
   </component>
@@ -193,12 +220,12 @@
       <updated>1546440693478</updated>
       <workItem from="1546440695092" duration="18803000" />
       <workItem from="1546468018446" duration="4110000" />
-      <workItem from="1546518457304" duration="7974000" />
+      <workItem from="1546518457304" duration="8377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30887000" />
+    <option name="totallyTimeSpent" value="31290000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1599" y="0" width="1922" height="1200" extended-state="6" />
@@ -295,13 +322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/prj/pag_1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="964">
@@ -339,13 +359,6 @@
             <element signature="n#style#0;n#th#4;n#tr#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/prj/pag_2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="78" column="75" selection-start-line="78" selection-start-column="75" selection-end-line="78" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -414,27 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/prj/pag_5.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="78" column="75" selection-start-line="78" selection-start-column="75" selection-end-line="78" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/prj/pag_4.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="78" column="75" selection-start-line="78" selection-start-column="75" selection-end-line="78" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/prj/pag_3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="81" column="59" lean-forward="true" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pag/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="919">
@@ -445,6 +437,41 @@
             <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/prj/pag_1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/prj/pag_2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/prj/pag_3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/prj/pag_4.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/prj/pag_5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
         </state>
       </provider>
     </entry>
