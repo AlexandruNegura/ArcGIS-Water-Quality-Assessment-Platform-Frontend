@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     require([
             "esri/Map",
             "esri/views/MapView",
@@ -38,8 +37,8 @@ $(document).ready(function () {
             const view = new MapView({
                 container: "viewDiv",
                 map: map,
-                center: [24.434251, 46.516567],
-                zoom: 10
+                center: [24.518385, 46.530043],
+                zoom: 14
             });
 
             // New FeatureForm and set its layer to 'Incidents' FeatureLayer.
@@ -47,15 +46,13 @@ $(document).ready(function () {
             const featureForm = new FeatureForm({
                 container: "formDiv",
                 layer: featureLayer,
-                fieldConfig: [
-                    {
-                        name: "IncidentType",
-                        label: "Choose incident type"
-                    },
-                    {
-                        name: "IncidentDescription",
-                        label: "Describe the problem"
-                    }
+                fieldConfig: [{
+                    name: "IncidentType",
+                    label: "Choose incident type"
+                }, {
+                    name: "IncidentDescription",
+                    label: "Describe the problem"
+                }
                 ]
             });
 
@@ -76,6 +73,7 @@ $(document).ready(function () {
                     const edits = {
                         updateFeatures: [editFeature]
                     };
+
                     applyEditsToIncidents(edits);
                     document.getElementById("viewDiv").style.cursor = "auto"
                 }
@@ -145,8 +143,7 @@ $(document).ready(function () {
                         let objectId;
                         if (editsResult.addFeatureResults.length > 0) {
                             objectId = editsResult.addFeatureResults[0].objectId;
-                        }
-                        else {
+                        } else {
                             featureForm.feature = null;
                             objectId = editsResult.updateFeatureResults[0].objectId;
                         }
@@ -159,13 +156,12 @@ $(document).ready(function () {
                     else if (editsResult.deleteFeatureResults.length > 0) {
                         toggleEditingDivs("block", "none");
                     }
-                })
-                    .catch(function (error) {
-                        console.log("===============================================");
-                        console.error("[ applyEdits ] FAILURE: ", error.code, error.name,
-                            error.message);
-                        console.log("error = ", error);
-                    });
+                }).catch(function (error) {
+                    console.log("===============================================");
+                    console.error("[ applyEdits ] FAILURE: ", error.code, error.name,
+                        error.message);
+                    console.log("error = ", error);
+                });
             }
 
             // Check if a user clicked on an incident feature.
@@ -173,13 +169,12 @@ $(document).ready(function () {
                 view.on("click", function (event) {
                     // clear previous feature selection
                     unselectFeature();
-                    if (document.getElementById("viewDiv").style.cursor != "crosshair") {
+                    if (document.getElementById("viewDiv").style.cursor !== "crosshair") {
                         view.hitTest(event).then(function (response) {
                             // If a user clicks on an incident feature, select the feature.
                             if (response.results.length === 0) {
                                 toggleEditingDivs("block", "none");
-                            }
-                            else if (response.results[0].graphic && response.results[0].graphic.layer.id == "incidentsLayer") {
+                            } else if (response.results[0].graphic && response.results[0].graphic.layer.id === "incidentsLayer") {
                                 if (addFeatureDiv.style.display === "block") {
                                     toggleEditingDivs("none", "block");
                                 }
