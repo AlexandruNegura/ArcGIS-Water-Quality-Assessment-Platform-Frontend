@@ -45,15 +45,15 @@ $(document).ready(function () {
 
 				let map = response.map;
 				let layerIds = map.graphicsLayerIds;
-				let visibleLayerName = "Nivelul apei";
-				let visibleLayerID = undefined;
+				let visibleLayerName = ["Nivelul apei", "MuresApe2"];
+				let visibleLayerID = {};
 				let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 				for (let i = 0; i < layerIds.length; i++) {
 					let layer = map.getLayer(layerIds[i]);
-					(layer.name !== visibleLayerName) ?
+					(!visibleLayerName.includes(layer.name )) ?
 						layer.hide() :
-						visibleLayerID = layerIds[i];
+						visibleLayerID[layer.name] = layerIds[i];
 				}
 
 				let scalebar = new Scalebar({
@@ -77,7 +77,7 @@ $(document).ready(function () {
 				timeSlider.setLoop(true);
 
 				/* Set the time extent */
-				let layerTimeExtent = map.getLayer(visibleLayerID).timeInfo.timeExtent;
+				let layerTimeExtent = map.getLayer(visibleLayerID[visibleLayerName[0]]).timeInfo.timeExtent;
 				timeSlider.createTimeStopsByTimeInterval(layerTimeExtent, 6, 'esriTimeUnitsMonths');
 				timeSlider.startup();
 
