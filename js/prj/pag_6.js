@@ -1,5 +1,4 @@
-$(document).ready(function () {
-
+$(window).on("load", function () {
     require([
             "esri/Map",
             "esri/views/MapView",

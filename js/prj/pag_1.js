@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(window).on("load", function () {
     let legendToggle = true;
     $("#legend-toggle").click(function () {
         legendToggle ?
