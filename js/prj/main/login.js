@@ -106,7 +106,7 @@ function loginSuccessCallback(response) {
 	}));
 
 	sessionStorage.setItem("activeSession", true);
-	window.location.href = "../../../pag/main.html";
+	window.location.href = "pag/main.html";
 }
 
 function loginErrorCallback(response) {
