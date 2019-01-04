@@ -39,7 +39,7 @@ $(window).on("load", function () {
         "esri/arcgis/utils",
         "esri/dijit/Legend",
         "esri/dijit/Scalebar",
-        "dojo/domReady!"
+        "dojo/domReady!js/prj/content/pag_1"
     ], function (
         parser,
         ready,

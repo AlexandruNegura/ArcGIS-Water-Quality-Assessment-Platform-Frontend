@@ -20,7 +20,7 @@ $(window).on("load", function () {
 		"esri/arcgis/utils",
 		"esri/dijit/Legend",
 		"esri/dijit/Scalebar",
-		"dojo/domReady!"
+		"dojo/domReady!js/prj/content/pag_3"
 	], function (
 		parser,
 		ready,
@@ -45,7 +45,7 @@ $(window).on("load", function () {
 
 				let map = response.map;
 				let layerIds = map.graphicsLayerIds;
-				let visibleLayerName = ["Azot", "MuresApe2"];
+				let visibleLayerName = ["Temperatura", "MuresApe2"];
 				let visibleLayerID = {};
 				let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -90,7 +90,7 @@ $(window).on("load", function () {
 				dojo.connect(timeSlider, "onTimeExtentChange", function (timeExtent) {
 					let [startTime, endTime] = getTimelineLimits(timeExtent);
 					dojo.byId("daterange").innerHTML =
-						"Nitrogen concentration (ppm) <b>" + startTime + "</b> to <b>" + endTime + "</b>";
+						"Water temperature (C) <b>" + startTime + "</b> to <b>" + endTime + "</b>";
 				});
 			});
 		});

@@ -33,6 +33,7 @@ function registerUser() {
 	makeRequest(
 		POST,
 		"http://www.asdasdasdas567.com", {
+			avatar: getRandomAvatar(),
 			username: user,
 			password: pass,
 			phone: phone,
@@ -93,12 +94,12 @@ function login() {
 function successCallback(user) {
 	sessionStorage.setItem("activeSession", true);
 	sessionStorage.setItem("activeUser", JSON.stringify({
-		avatar: "http://s3-us-west-1.amazonaws.com/witty-avatars/default-avatar-1-l.jpg",
+		avatar: getRandomAvatar(),
 		mail: user + "@chestie.com",
 		phone: "0123 456 789",
 		username: user,
 		alerts: true
 	}));
 
-	window.location.href = "pag/main.html";
+	window.location.href = "../../../pag/main.html";
 }

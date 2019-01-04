@@ -9,12 +9,14 @@ $(window).on("load", function () {
 		if (!activeUser) return;
 
 		/* Display the username */
+		let fieldAvtarSrc = document.getElementById("avatarsrc");
 		let fieldUser = document.getElementById("username");
 		let fieldAvatar = document.getElementById("avatar");
 		let fieldAlerts= document.getElementById("alerts");
 		let fieldPhone = document.getElementById("phone");
 		let fieldMail = document.getElementById("mail");
 
+		fieldAvtarSrc.value = activeUser.avatar;
 		fieldAlerts.checked = activeUser.alerts;
 		fieldUser.value += activeUser.username;
 		fieldPhone.value += activeUser.phone;
