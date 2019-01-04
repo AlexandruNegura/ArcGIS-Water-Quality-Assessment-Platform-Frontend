@@ -34,7 +34,7 @@ $(window).on("load", function () {
 
             const map = new Map({
                 basemap: "topo",
-                layers: [featureLayer, waterLayer]
+                layers: [waterLayer, featureLayer]
             });
 
             const view = new MapView({
@@ -76,8 +76,9 @@ $(window).on("load", function () {
                         console.log(name);
                     });
 
-                    let activeUser =  localStorage.getItem("username") || "Unknown";
-                    editFeature.attributes["ReportedBy"] = activeUser;
+                    let activeUser = sessionStorage.getItem("activeUser");
+                    activeUser = JSON.parse(activeUser);
+                    editFeature.attributes["ReportedBy"] = activeUser.username || "Unknown";
 
                     // Setup the applyEdits parameter with updates.
                     const edits = {
