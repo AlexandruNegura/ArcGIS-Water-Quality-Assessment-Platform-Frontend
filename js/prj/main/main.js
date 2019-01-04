@@ -24,9 +24,6 @@ $(document).ready(function () {
 	 * cleared and the user is redirected to the login page.
 	 */
     $("#logout-btn").click(function () {
-        sessionStorage.removeItem("username");
-        sessionStorage.removeItem("avatar");
-        sessionStorage.removeItem("activeMenu");
         sessionStorage.clear();
         
         let currentLocation = window.location.href;

@@ -16,7 +16,7 @@ function makeRequest(type, url, data, scc, err) {
 		type: type,
 		contentType: "application/json",
 		data: (data !== null)
-			? data :
+			? JSON.stringify(data) :
 			JSON.stringify({}),
 		success: scc,
 		error: err

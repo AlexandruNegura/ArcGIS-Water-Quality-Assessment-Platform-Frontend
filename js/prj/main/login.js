@@ -28,11 +28,13 @@ function registerUser() {
 	let pass = document.getElementById("reg-password").value;
 	let phone = document.getElementById("reg-phone").value;
 	let mail = document.getElementById("reg-mail").value;
-	pass = md5(pass);
+	if(pass) {
+        pass = md5(pass);
+    }
 
 	makeRequest(
 		POST,
-		"http://www.asdasdasdas567.com", {
+		"https://arcgis-backend.herokuapp.com/api/users/register", {
 			avatar: getRandomAvatar(),
 			username: user,
 			password: pass,
@@ -84,7 +86,7 @@ function login() {
 
 	makeRequest(
 		POST,
-		"http://www.google.com", {
+		"https://arcgis-backend.herokuapp.com/api/users/login", {
 			username: user,
 			password: pass
 		}, loginSuccessCallback,
@@ -93,14 +95,14 @@ function login() {
 }
 
 function loginSuccessCallback(response) {
-	console.log("[loginErrorCallback]", response);
+	console.log("[loginSuccessCallback]", response);
 
 	sessionStorage.setItem("activeUser", JSON.stringify({
-		avatar: getRandomAvatar(),
-		mail: user + "@chestie.com",
-		phone: "0123 456 789",
-		username: user,
-		alerts: true
+		avatar: response.avatar,
+		mail: response.mail,
+		phone: response.phone,
+		username: response.username,
+		alerts: response.alerts
 	}));
 
 	sessionStorage.setItem("activeSession", true);

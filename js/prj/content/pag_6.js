@@ -54,16 +54,36 @@ $(window).on("load", function () {
             const featureForm = new FeatureForm({
                 container: "formDiv",
                 layer: featureLayer,
-                fieldConfig: [ {
-                    name: "ReportedBy",
-                    label: "Reported By"
-                }, {
+                fieldConfig: [{
                     name: "IncidentType",
                     label: "Choose incident type"
                 }, {
                     name: "IncidentDescription",
                     label: "Describe the problem"
-                },]
+                }, {
+                    name: "ReportedBy",
+                    label: "Incident reportedBy",
+                    editable: false
+                }]
+            });
+
+            const featureFormViewOnly = new FeatureForm({
+                container: "formDivViewOnly",
+                layer: featureLayer,
+                fieldConfig: [{
+                    name: "IncidentType",
+                    label: "Choose incident type",
+                    editable: false
+                }, {
+                    name: "IncidentDescription",
+                    label: "Describe the problem",
+                    editable: false
+
+                }, {
+                    name: "ReportedBy",
+                    label: "Incident reportedBy",
+                    editable: false
+                }]
             });
 
             // Listen to the feature form's submit event.
@@ -160,7 +180,7 @@ $(window).on("load", function () {
                         }
                         selectFeature(objectId);
                         if (addFeatureDiv.style.display === "block") {
-                            toggleEditingDivs("none", "block");
+                            toggleEditingDivsAndRemoveView("none", "block");
                         }
                     }
                     // show FeatureTemplates if user deleted a feature
@@ -187,10 +207,44 @@ $(window).on("load", function () {
                                 toggleEditingDivs("block", "none");
                             } else if (response.results[0].graphic && response.results[0].graphic.layer.id === "incidentsLayer") {
                                 if (addFeatureDiv.style.display === "block") {
-                                    toggleEditingDivs("none", "block");
+                                    let user = JSON.parse(sessionStorage.getItem("activeUser"));
+                                    checkIfCreatorOfIncident(
+                                        response.results[0].graphic.attributes[featureLayer.objectIdField],
+                                        function (creator) {
+                                            if (user.username === "asdd" || creator === user.username) {
+                                                toggleEditingDivsAndRemoveView("none", "block");
+                                                selectFeature(response.results[0].graphic.attributes[featureLayer.objectIdField]);
+                                            } else {
+                                                toggleViewDiv("none", "block");
+                                                selectFeatureViewOnly(response.results[0].graphic.attributes[featureLayer.objectIdField]);
+                                            }
+                                        }
+                                    )
+
                                 }
-                                selectFeature(response.results[0].graphic.attributes[featureLayer.objectIdField]);
                             }
+                        });
+                    }
+                });
+            }
+
+            // Highlights the clicked feature and display
+            // the feature form with the incident's attributes.
+            function selectFeatureViewOnly(objectId) {
+                // query feature from the server
+                featureLayer.queryFeatures({
+                    objectIds: [objectId],
+                    outFields: ["*"],
+                    returnGeometry: true
+                }).then(function (results) {
+                    if (results.features.length > 0) {
+                        editFeature = results.features[0];
+
+                        featureFormViewOnly.feature = editFeature;
+
+                        // highlight the feature on the view
+                        view.whenLayerView(editFeature.layer).then(function (layerView) {
+                            highlight = layerView.highlight(editFeature);
                         });
                     }
                 });
@@ -219,6 +273,25 @@ $(window).on("load", function () {
                 });
             }
 
+            function checkIfCreatorOfIncident(objectId, callback) {
+                // query feature from the server
+                featureLayer.queryFeatures({
+                    objectIds: [objectId],
+                    outFields: ["*"],
+                    returnGeometry: true
+                }).then(function (results) {
+                    if (results.features.length > 0) {
+                        editFeature = results.features[0];
+
+                        let creator = editFeature.attributes["ReportedBy"];
+
+                        if (callback) {
+                            callback(creator);
+                        }
+                    }
+                });
+            }
+
             // Expand widget for the editArea div.
             const editExpand = new Expand({
                 expandIconClass: "esri-icon-edit",
@@ -232,11 +305,32 @@ $(window).on("load", function () {
             // input boxes for the attribute editing
             const addFeatureDiv = document.getElementById("addFeatureDiv");
             const attributeEditing = document.getElementById("featureUpdateDiv");
+            const viewAtribute = document.getElementById("featureUpdateDivViewOnly");
+
 
             // Controls visibility of addFeature or attributeEditing divs
             function toggleEditingDivs(addDiv, attributesDiv) {
                 addFeatureDiv.style.display = addDiv;
+                viewAtribute.style.display = attributesDiv;
                 attributeEditing.style.display = attributesDiv;
+
+                document.getElementById("updateInstructionDiv").style.display = addDiv;
+            }
+
+            // Controls visibility of addFeature or attributeEditing divs
+            function toggleEditingDivsAndRemoveView(addDiv, attributesDiv) {
+                addFeatureDiv.style.display = addDiv;
+                viewAtribute.style.display = addDiv;
+                attributeEditing.style.display = attributesDiv;
+
+                document.getElementById("updateInstructionDiv").style.display = addDiv;
+            }
+
+            // Controls visibility of addFeature or attributeEditing divs
+            function toggleViewDiv(addDiv, attributesDiv) {
+                addFeatureDiv.style.display = addDiv;
+                attributeEditing.style.display = addDiv;
+                viewAtribute.style.display = attributesDiv;
 
                 document.getElementById("updateInstructionDiv").style.display = addDiv;
             }
