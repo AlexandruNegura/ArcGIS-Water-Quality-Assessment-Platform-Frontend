@@ -40,8 +40,8 @@ $(window).on("load", function () {
             const view = new MapView({
                 container: "viewDiv",
                 map: map,
-                center: [24.518385, 46.530043],
-                zoom: 14
+                center: [24.506351, 46.516413],
+                zoom: 13
             });
 
             let scalebar = new Scalebar({
@@ -54,28 +54,30 @@ $(window).on("load", function () {
             const featureForm = new FeatureForm({
                 container: "formDiv",
                 layer: featureLayer,
-                fieldConfig: [{
+                fieldConfig: [ {
+                    name: "ReportedBy",
+                    label: "Reported By"
+                }, {
                     name: "IncidentType",
                     label: "Choose incident type"
                 }, {
                     name: "IncidentDescription",
                     label: "Describe the problem"
-                }
-                ]
+                },]
             });
 
             // Listen to the feature form's submit event.
             // Update feature attributes shown in the form.
             featureForm.on("submit", function () {
                 if (editFeature) {
-                    // Grab updated attributes from the form.
                     const updated = featureForm.getValues();
-
-                    // Loop through updated attributes and assign
-                    // the updated values to feature attributes.
                     Object.keys(updated).forEach(function (name) {
                         editFeature.attributes[name] = updated[name];
+                        console.log(name);
                     });
+
+                    let activeUser =  localStorage.getItem("username") || "Unknown";
+                    editFeature.attributes["ReportedBy"] = activeUser;
 
                     // Setup the applyEdits parameter with updates.
                     const edits = {
@@ -250,7 +252,7 @@ $(window).on("load", function () {
             document.getElementById("btnUpdate").onclick = function () {
                 // Fires feature form's submit event.
                 featureForm.submit();
-            }
+            };
 
             // Delete the selected feature. ApplyEdits is called
             // with the selected feature to be deleted.
