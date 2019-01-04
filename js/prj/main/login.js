@@ -37,6 +37,7 @@ function registerUser() {
 			username: user,
 			password: pass,
 			phone: phone,
+			alerts: true,
 			mail: mail
 		}, registerSuccessCallback,
 		registerErrorCallback
