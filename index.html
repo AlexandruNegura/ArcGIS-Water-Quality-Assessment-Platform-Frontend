@@ -5,9 +5,12 @@
     <link rel="icon" href="res/water.png">
     <title>Poliloco</title>
 
-    <!-- Bootstrap stuff -->
+    <!-- Lib stuff -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+	<script src = "http://www.myersdaily.org/joseph/javascript/md5.js"></script>
+
+	<!-- Bootstrap stuff -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,7 +31,7 @@
 
 <body class="login-body">
     <div class="flex-container">
-        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 offset-xs-3 offset-sm-3 offset-md-4 offset-lg-4">
+        <div id="login-form" class="col-xs-6 col-sm-6 col-md-4 col-lg-4 offset-xs-3 offset-sm-3 offset-md-4 offset-lg-4">
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 offset-xs-2 offset-md-2 offset-sm-2 offset-lg-2 form-box">
                 <div align="center" class="logo">
                     <img src="res/water.png" width="75px" height="75px">
@@ -48,11 +51,53 @@
 
                     <div class="form-actions" align="center">
                         <button type="button" class="btn btn-primary" onclick="login()">Login</button>
-                        <a href="#!/register" class="btn btn-link">Register</a>
+	                    <button type="button" class="btn btn-primary" onclick="toggleForms()">Register</button>
                     </div>
                 </form>
+
+	            <br>
+	            <div id="reg-suc-alert" style="display: none" class="alert alert-success"></div>
             </div>
         </div>
+
+	    <div id="register-form" class="col-xs-6 col-sm-6 col-md-4 col-lg-4 offset-xs-3 offset-sm-3 offset-md-4 offset-lg-4" style="display: none">
+		    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 offset-xs-2 offset-md-2 offset-sm-2 offset-lg-2 form-box">
+			    <div align="center" class="logo">
+				    <img src="res/water.png" width="75px" height="75px">
+			    </div>
+
+			    <h3>Login</h3>
+			    <form name="form" role="form">
+				    <div class="form-group">
+					    <label for="username">*Username</label>
+					    <input type="text" name="username" id="reg-username" class="form-control" required/>
+				    </div>
+
+				    <div class="form-group">
+					    <label for="password">*Password</label>
+					    <input type="password" name="password" id="reg-password" class="form-control" required/>
+				    </div>
+
+				    <div class="form-group">
+					    <label for="password">Email</label>
+					    <input type="email" name="email" id="reg-mail" class="form-control"/>
+				    </div>
+
+				    <div class="form-group">
+					    <label for="password">Phone number</label>
+					    <input type="tel" name="phone" id="reg-phone" class="form-control" />
+				    </div>
+
+				    <div class="form-actions" align="center">
+					    <button type="button" class="btn btn-primary" onclick="registerUser()">Create</button>
+					    <button type="button" class="btn btn-primary" onclick="toggleForms()">Back</button>
+				    </div>
+			    </form>
+
+			    <br>
+			    <div id="reg-err-alert" style="display: none" class="alert alert-danger"></div>
+		    </div>
+	    </div>
     </div>
 
     <p id="demo"></p>

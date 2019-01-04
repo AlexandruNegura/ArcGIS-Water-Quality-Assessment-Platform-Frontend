@@ -29,7 +29,7 @@ body, html {
 
 .flex-container {
     display: flex;
-    height: 85vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
 }
