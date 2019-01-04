@@ -46,8 +46,11 @@ $(document).ready(function () {
      * Set the username and the avatar after the user logs in.
      */
     function setUsername() {
-        let username = sessionStorage.getItem("username") || "Guest";
-        let avatar = sessionStorage.getItem("avatar") || "../res/blank_avatar.png";
+	    let activeUser = sessionStorage.getItem("activeUser");
+	    activeUser = JSON.parse(activeUser);
+
+        let username = activeUser.username || "Guest";
+        let avatar = activeUser.avatar || "../res/blank_avatar.png";
 
         /* Display the username */
         let usernameSpan = document.getElementById("username");

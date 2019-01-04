@@ -1,71 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="icon" href="../res/water.png">
-    <title>Poliloco</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="icon" href="../res/water.png">
+	<title>Poliloco</title>
 
-    <!-- Bootstrap stuff -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap stuff -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css"/>
+	<!-- Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css"/>
 
-    <!-- Styles -->
-    <link href="../styles/style.css" type="text/css" rel="stylesheet">
+	<!-- Styles -->
+	<link href="../styles/style.css" type="text/css" rel="stylesheet">
 
-    <!-- Extra stuff -->
-    <script src="../js/lib/jquery.ripples-min.js"></script>
+	<!-- Extra stuff -->
+	<script src="../js/lib/jquery.ripples-min.js"></script>
 
-    <!-- Page specific -->
-    <script src="../js/prj/utils.js"></script>
-    <script src="../js/prj/main.js"></script>
+	<!-- Page specific -->
+	<script src="../js/prj/utils.js"></script>
+	<script src="../js/prj/main.js"></script>
 </head>
 
 <body class="login-body">
-    <div class="row full-h" style="margin: 0; padding: 25px">
-        <div class="col-sm-4 col-md-3 col-lg-2 main-box">
-            <div class="menu-container" align="center">
-                <div style="width: 100%; padding: 5px 10px;">
-                    <img src="../res/avatar_blank.png" id="avatar" class="avatar">
-                    <br>
-                    <span class="wtext">
+<div class="row full-h" style="margin: 0; padding: 5px">
+	<div class="col-sm-4 col-md-3 col-lg-2 main-box">
+		<div class="menu-container" align="center">
+			<div style="width: 100%; padding: 5px 10px;">
+				<img src="../res/avatar_blank.png" id="avatar" class="avatar">
+				<br>
+				<span class="wtext">
                         Welcome back, <span id="username"></span>!
                     </span>
-                    <hr style="background-color: black">
+				<hr style="background-color: black">
 
-                    <div>
-                        <a href="pag_1.html" target="main-iframe"><div id="menu_1" class="btn btn-success btn-warning menu-button">General overview</div></a>
-                        <a href="pag_2.html" target="main-iframe"><div id="menu_2"  class="btn btn-success menu-button">Nitrogen concentration</div></a>
-                        <a href="pag_3.html" target="main-iframe"><div id="menu_3"  class="btn btn-success menu-button">Water temperature</div></a>
-                        <a href="pag_4.html" target="main-iframe"><div id="menu_4"  class="btn btn-success menu-button">Water pH</div></a>
-                        <a href="pag_5.html" target="main-iframe"><div id="menu_5"  class="btn btn-success menu-button">Water level</div></a>
-                        <a href="pag_6.html" target="main-iframe"><div id="menu_6"  class="btn btn-success menu-button menu-button-last">Alerts</div></a>
+				<div>
+					<a href="pag_1.html" target="main-iframe">
+						<div id="menu_1" class="btn btn-success btn-warning menu-button">General overview</div>
+					</a>
+					<a href="pag_2.html" target="main-iframe">
+						<div id="menu_2" class="btn btn-success menu-button">Nitrogen concentration</div>
+					</a>
+					<a href="pag_3.html" target="main-iframe">
+						<div id="menu_3" class="btn btn-success menu-button">Water temperature</div>
+					</a>
+					<a href="pag_4.html" target="main-iframe">
+						<div id="menu_4" class="btn btn-success menu-button">Water pH</div>
+					</a>
+					<a href="pag_5.html" target="main-iframe">
+						<div id="menu_5" class="btn btn-success menu-button">Water level</div>
+					</a>
+					<a href="pag_6.html" target="main-iframe">
+						<div id="menu_6" class="btn btn-success menu-button menu-button-last">Alerts</div>
+					</a>
 
-                        <hr style="background-color: black">
+					<hr style="background-color: black">
 
-                        <div class="btn btn-success menu-button" id="account-btn">Account</div>
-                        <div class="btn btn-success menu-button" id="about-btn">About</div>
-                        <div class="btn btn-success menu-button menu-button-last" id="logout-btn">Logout</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+					<a href="pag_account.html" target="main-iframe">
+						<div class="btn btn-success menu-button" id="account-btn">Account</div>
+					</a>
+					<a href="pag_about.html" target="main-iframe">
+						<div class="btn btn-success menu-button" id="about-btn">About</div>
+					</a>
+					<div class="btn btn-success menu-button menu-button-last" id="logout-btn">Logout</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-        <div class="col-sm-8 col-md-9 col-lg-10 main-box">
-            <div class="content-container">
-                <iframe name="main-iframe" id="main" src="pag_1.html" class="full-rounded padding-5" frameborder="0"></iframe>
-            </div>
-        </div>
+	<div class="col-sm-8 col-md-9 col-lg-10 main-box">
+		<div class="content-container">
+			<iframe name="main-iframe" id="main" src="pag_1.html" class="full-rounded padding-5"
+			        frameborder="0"></iframe>
+		</div>
+	</div>
 
-        <div class="col-sm-12 col-md-12 col-lg-12 footer-container">
-            <div class="footer" align="center">
-                Copyright © Poliloco 2019
-            </div>
-        </div>
-    </div>
+	<div class="col-sm-12 col-md-12 col-lg-12 footer-container">
+		<div class="footer" align="center">
+			Copyright © Poliloco 2019
+		</div>
+	</div>
+</div>
 </body>
 </html>

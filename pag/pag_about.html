@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="icon" href="../res/water.png">
+	<title>Poliloco</title>
+
+	<!-- jQuery & socket.io stuff -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+	<!-- Bootstrap stuff -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css"/>
+
+	<!-- GIS specific syles -->
+	<link rel="stylesheet" href="https://js.arcgis.com/3.27/dijit/themes/claro/claro.css">
+	<link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+
+	<!-- Styles -->
+	<link href="../styles/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body style="overflow: hidden; background-color: transparent">
+
+<div class="transparent full" style="padding: 10px; overflow: scroll; text-align: justify">
+	<img src="http://4.bp.blogspot.com/-ggohSk7J4nM/Tnr2yyykN-I/AAAAAAAABVY/F7-IU5yqWjM/s1600/raul%2Bmures.jpg.jpg" align="right" class="about-image">
+	<p>
+		&nbsp;&nbsp;&nbsp;Pe Pământ, apa există în multe forme, în cele mai variate locuri. Sub formă de apă dulce
+		lichidă, apa se găsește în ape curgătoare, stătătoare, precipitații lichide, ploi, și ape freatice sau
+		subterane. Apa de la suprafața globului joacă roluri importante în evoluția umană; râurile și irigațiile asigură
+		aportul de apă pentru agricultură, sunt suport pentru transportul maritim sau fluvial, fie comercial sau de
+		agrement. Desi natura poate fi imprevizibila, la fel sunt si oamenii, ajungand de multe ori sa polueze raurile
+		si lacurile prin actiunile lor, de obicei influentate de industrialzare. Astfel, apar deversari de substante
+		nocive sau deseuri care influenteaza si impacteaza atat calitatea apei, cat si a florei si faunei consolidate in
+		zona respectiva.
+	</p>
+	<p>
+		&nbsp;&nbsp;&nbsp;Raul Mureș izvorăște din Munții Hășmașu Mare si traverseaza Depresiunea Transilvaniei, trecand
+		prin mai multe orase precum Reghin, Targu Mures, Alba Iulia, Deva sau Arad. Azomureș este cel mai mare
+		producător de îngrășăminte chimice din România. Compania produce azotat de amoniu, nitrocalcar, uree,
+		îngrășăminte lichide, îngrășăminte complexe și melamină. Azomureș este cel mai mare poluator al județului Mureș,
+		de-a lungul timpului depășind de multe ori concentrația maxim admisă pentru emisiile de azot și amoniac. În
+		perioada 16-23 august 2012 în municipiul Târgu Mureș s-au înregistrat peste 20 de depășiri ale concentrației
+		maxim admise pentru amoniac.
+	</p>
+
+	<img src="https://media.rtv.net/image/201509/full/azomures2_50938800.jpg" align="left" class="about-image">
+	<p>
+		&nbsp;&nbsp;&nbsp;Proiectul de față are ca scop documentarea realizării unei platforme de monitorizare a
+		calității apei a Muresului pe sectorul Reghin - Ludus, sector la mijlocul caruia se afla combinatul chimic
+		sus-mentionat. Intrucat acesta este plasat foarte aproape de rau (la doar cateva sute de metri), emisiile
+		chimice il impacteaza in mod direct. Atat calitatea apei cat si a florei si a faunei in zona descrisa sunt
+		puternic influentate de prezenta in concentratii prea mari al unor componente chimice. Platforma care urmeaza sa
+		fie creata are ca scop monitorizarea unor parametrii ai raului pentru a putea actiona spre reducerea emisiilor
+		de amoniac si imbunatatirea calitatii atat a apei, cat si a ecosistemului existent.
+	</p>
+
+	<p>
+		&nbsp;&nbsp;&nbsp;Pentru solutionarea problemei, monitorizarea unor parametrii pe sectorul Reghin - Ludus, vom
+		avea nevoie de mai multi senzori care vor trimite date, date ce vor fi stocate intr-o baza de date. Toate aceste
+		date vor fi prelucrate, agregate, astfel incat cu ajutorul lor sa generam niste seturi de date sugestive si
+		utile in vederea realizarii unor grafice sau heatmap-uri.Printre metricile principale ce urmeaza a fi corelate,
+		putem enumera urmatoarele:
+	</p>
+	<ul>
+		<li>presiunea</li>
+		<li>nivelul apei</li>
+		<li>temperatura apei</li>
+		<li>concentratia de azot din apa</li>
+		<li>pH-ul apei</li>
+	</ul>
+
+	<p>
+		Se pot evalua si metrici secundare, referitoare la fauna si flora din jur (aceste metrici
+		vor fi observate si colectate manual, vizand sanatatea plantelor, rata de crestere, numarul de
+		animale din jur (in special pesti), etc). Investitorii principali interesati de aceasta aplicatie
+		sunt mai multe administratii teritoriale si nationale, cat si organizatii care se ocupa cu studiul
+		poluarii, studierea plantelor si animalelor sau a calitatii vietii cetatenilor:
+	</p>
+
+	<ul>
+		<li>Administratia Bazinala de Apa Mures</li>
+		<li>Administratia Nationala “Apele Romane”</li>
+		<li>Aquaserv Tirgu-Mures</li>
+		<li>Organizatia Mondiala a Sanatatii - devizia Romania</li>
+		<li>Ministerul Mediului, Apelor si Padurilor</li>
+		<li>Ministerul Agriculturii, Pădurilor şi Dezvoltării Rurale</li>
+	</ul>
+
+	<p>
+		Folosind aplicatia, acestea vor avea in timp real diferite date si statistici colectate automat de catre
+		senzorii situati pe cursul raului. Intrucat sectorul de rau ales are aproximativ 70km, in urma unor consultari
+		s-a decis sa se foloseasca un numar de X senzori plasati dupa cum urmeaza:
+	</p>
+
+	<ul>
+		<li> Pe sectorul Reghin si pana la regiunea paralela cu localitatea Santana de Mures
+			(28km), se vor plasa 14 senzori, cate unul din fiecare tip din 2 in 2 kilometri
+		</li>
+		<li> Pe sectorul mentionat anterior si pana in Cristesti (10 km) se vor plasa 10 senzori,
+			cate unul la fiecare km. Motivatia este datorita faptului ca in acest sector este
+			combinatul Azomures si datele trebuie sa fie mult mai granulare
+		</li>
+		<li> Pe sectorul Cristesti - Ludus (32km), se vor plasa 16 senzori, cate unul din fiecare tip
+			din 2 in 2 kilometri
+			Utilizator al aplicatiei poate fi de asemenea si orice persoana interesata de protectia
+			mediului sau care vrea sa ajute, semnaland neconformitati. Fiind accesibila si de pe un
+			smarthphone, in caz ca cineva observa o neconcordanta (deseuri in rau, miros mult prea
+			puternic de amoniac in zona, vegetatie distrusa, apa cu culoare/temperatura/miros ciudat),
+			acesta poate sa genereze o alerta care va fi introdusa in sistem. In caz ca un numar mai mare
+			de persoane din aceeasi zona semnaleaza acelasi tip de incident, pe harta va aparea un
+			indicator in zona cu pricina, iar cei abonati la astfel de alerte vor putea lua masurile necesare.
+		</li>
+	</ul>
+</div>
+
+</body>
+</html>

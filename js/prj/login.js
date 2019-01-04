@@ -1,3 +1,13 @@
+/* Redirect the user back if already logged in */
+(function () {
+	if (sessionStorage.getItem("activeSession"))
+		window.location.href =
+			(window.location.href.indexOf("localhost") >= 0) ?
+				"/pag/main.html" :
+				"/poliloco/pag/main.html";
+})();
+
+
 /**
  * Toggle between the login and register forms.
  */
@@ -19,7 +29,7 @@ function registerUser() {
 	let phone = document.getElementById("reg-phone").value;
 	let mail = document.getElementById("reg-mail").value;
 	pass = md5(pass);
-	
+
 	makeRequest(
 		POST,
 		"http://www.asdasdasdas567.com", {
@@ -66,23 +76,29 @@ function registerErrorCallback(data) {
  * Function to be called when the user clicks the login button.
  */
 function login() {
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
+	let user = document.getElementById("username").value;
+	let pass = document.getElementById("password").value;
 	pass = md5(pass);
 
-    makeRequest(
-        POST,
-        "http://www.google.com", {
-            username: user,
-            password: pass
-        }, successCallback(user),
-        successCallback(user)
-    )
+	makeRequest(
+		POST,
+		"http://www.google.com", {
+			username: user,
+			password: pass
+		}, successCallback(user),
+		successCallback(user)
+	)
 }
 
 function successCallback(user) {
-    sessionStorage.setItem("activeSession", true);
-    sessionStorage.setItem("username", user);
-    sessionStorage.setItem("avatar", "http://s3-us-west-1.amazonaws.com/witty-avatars/default-avatar-1-l.jpg");
-    window.location.href = "pag/main.html";
+	sessionStorage.setItem("activeSession", true);
+	sessionStorage.setItem("activeUser", JSON.stringify({
+		avatar: "http://s3-us-west-1.amazonaws.com/witty-avatars/default-avatar-1-l.jpg",
+		mail: user + "@chestie.com",
+		phone: "0123 456 789",
+		username: user,
+		alerts: true
+	}));
+
+	window.location.href = "pag/main.html";
 }

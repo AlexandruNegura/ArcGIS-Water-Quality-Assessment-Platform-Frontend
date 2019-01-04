@@ -22,3 +22,23 @@ function makeRequest(type, url, data, scc, err) {
         error: err
     });
 }
+
+/**
+ * Gets the start/end time from the timeExtent
+ *
+ * @param timeExtent to be used
+ * @returns {*[]} array with the limitsfgtrtfttr
+ */
+function getTimelineLimits(timeExtent) {
+	let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	let startTime =
+		monthNames[timeExtent.startTime.getUTCMonth()] + " " +
+		timeExtent.startTime.getUTCDate() + " " +
+		timeExtent.startTime.getUTCFullYear();
+	let endTime =
+		monthNames[timeExtent.endTime.getUTCMonth()] + " " +
+		timeExtent.endTime.getUTCDate() + " " +
+		timeExtent.endTime.getUTCFullYear();
+
+	return [startTime, endTime];
+}

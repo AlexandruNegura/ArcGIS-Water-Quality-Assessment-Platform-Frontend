@@ -88,15 +88,7 @@ $(window).on("load", function () {
 
 				/* Detect slider changes */
 				dojo.connect(timeSlider, "onTimeExtentChange", function (timeExtent) {
-					let startTime =
-						monthNames[timeExtent.startTime.getUTCMonth()] + " " +
-						timeExtent.startTime.getUTCDate() + " " +
-						timeExtent.startTime.getUTCFullYear();
-					let endTime =
-						monthNames[timeExtent.endTime.getUTCMonth()] + " " +
-						timeExtent.endTime.getUTCDate() + " " +
-						timeExtent.endTime.getUTCFullYear();
-
+					let [startTime, endTime] = getTimelineLimits(timeExtent);
 					dojo.byId("daterange").innerHTML =
 						"Water level (m) <b>" + startTime + "</b> to <b>" + endTime + "</b>";
 				});

@@ -49,6 +49,10 @@ body, html {
     padding: 20px;
 }
 
+.transparent {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 .main-box {
     height: 95%;
     margin: 0;
@@ -98,6 +102,12 @@ body, html {
 
     border: 1px solid black;
     border-radius: 100%;
+}
+
+.avatar-big {
+    width: 125px;
+    height: 125px;
+    border: 1px solid black;
 }
 
 .wtext {
@@ -187,12 +197,12 @@ body, html {
     right: 0px;
 }
 
- #viewDiv {
-     padding: 0;
-     margin: 0;
-     height: 100%;
-     width: 100%;
- }
+#viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
 
 .editArea-container {
     background: #fff;
@@ -244,4 +254,14 @@ body, html {
 
 .esri-feature-templates__list {
     max-height: 180px;
+}
+
+.about-image {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 5px;
+
+    max-width: 40%;
+    height: auto;
 }
