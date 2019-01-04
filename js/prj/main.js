@@ -14,9 +14,13 @@ $(document).ready(function () {
         localStorage.removeItem("avatar");
         localStorage.removeItem("activeMenu");
         localStorage.clear();
-
+        
+        let currentLocation = window.location.href;
+        window.location.href = 
+            (currentLocation.indexOf("localhost") >= 0) ?
+                "/" :
+                "/poliloco";
         console.log("Logging out...");
-        window.location.href = "/";
     });
 
     function resetAllButtonsColors() {
