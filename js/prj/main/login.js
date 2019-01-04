@@ -87,13 +87,14 @@ function login() {
 		"http://www.google.com", {
 			username: user,
 			password: pass
-		}, successCallback(user),
-		successCallback(user)
+		}, loginSuccessCallback,
+		loginErrorCallback
 	)
 }
 
-function successCallback(user) {
-	sessionStorage.setItem("activeSession", true);
+function loginSuccessCallback(response) {
+	console.log("[loginErrorCallback]", response);
+
 	sessionStorage.setItem("activeUser", JSON.stringify({
 		avatar: getRandomAvatar(),
 		mail: user + "@chestie.com",
@@ -102,5 +103,10 @@ function successCallback(user) {
 		alerts: true
 	}));
 
+	sessionStorage.setItem("activeSession", true);
 	window.location.href = "../../../pag/main.html";
+}
+
+function loginErrorCallback(response) {
+	console.log("[loginErrorCallback]", response);
 }
