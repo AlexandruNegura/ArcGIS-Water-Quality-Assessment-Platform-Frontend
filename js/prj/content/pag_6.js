@@ -96,6 +96,14 @@ $(window).on("load", function () {
                         console.log(name);
                     });
 
+                    editFeature.attributes["Latitude"]
+                        = editFeature.attributes["Latitude_D"]
+                        = featureForm.feature.geometry.latitude;
+
+                    editFeature.attributes["Longitude"]
+                        = editFeature.attributes["Longitude_D"]
+                        = featureForm.feature.geometry.longitude;
+
                     let activeUser = sessionStorage.getItem("activeUser");
                     activeUser = JSON.parse(activeUser);
                     editFeature.attributes["ReportedBy"] = activeUser.username || "Unknown";
@@ -106,9 +114,28 @@ $(window).on("load", function () {
                     };
 
                     applyEditsToIncidents(edits);
-                    document.getElementById("viewDiv").style.cursor = "auto"
+                    document.getElementById("viewDiv").style.cursor = "auto";
+
+                    makeRequest(
+                        POST,
+                        "https://arcgis-backend.herokuapp.com/api/mails/send", {
+                            sender: activeUser.username,
+                            incidentType : editFeature.attributes["IncidentType"],
+                            location : "[" + editFeature.attributes["Latitude"] + ", " + editFeature.attributes["Longitude"] + "]",
+                            description: editFeature.attributes["IncidentDescription"],
+                        }, mailSuccessCallback,
+                        mailErrorCallback
+                    );
                 }
             });
+
+            function mailSuccessCallback() {
+                console.log("[Sent mail successfully]")
+            }
+
+            function mailErrorCallback() {
+                console.log("[Sent mail unsuccessfully]")
+            }
 
             // Check if the user clicked on the existing feature
             selectExistingFeature();
