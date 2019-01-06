@@ -43,6 +43,9 @@ $(window).on("load", function () {
 				dom.byId("title").innerHTML = response.itemInfo.item.title;
 				dom.byId("subtitle").innerHTML = response.itemInfo.item.snippet;
 
+                google.charts.load('current', {packages: ['corechart', 'line']});
+                google.charts.setOnLoadCallback(drawBackgroundColor);
+
 				let map = response.map;
 				let layerIds = map.graphicsLayerIds;
 				let visibleLayerName = ["Azot", "MuresApe2"];
@@ -92,7 +95,12 @@ $(window).on("load", function () {
 					dojo.byId("daterange").innerHTML =
 						"Nitrogen concentration (ppm) <b>" + startTime + "</b> to <b>" + endTime + "</b>";
 				});
-			});
-		});
+
+				map.on("click", function(evt) {
+                    selectGraphicsNearSelectedOne(evt, "Time", "Nitrogen", map.getLayer(visibleLayerID[visibleLayerName[0]]));
+                });
+
+            });
+        });
 	});
 });

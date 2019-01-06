@@ -43,6 +43,9 @@ $(window).on("load", function () {
 				dom.byId("title").innerHTML = response.itemInfo.item.title;
 				dom.byId("subtitle").innerHTML = response.itemInfo.item.snippet;
 
+                google.charts.load('current', {packages: ['corechart', 'line']});
+                google.charts.setOnLoadCallback(drawBackgroundColor);
+
 				let map = response.map;
 				let layerIds = map.graphicsLayerIds;
 				let visibleLayerName = ["Temperatura", "MuresApe2"];
@@ -92,6 +95,10 @@ $(window).on("load", function () {
 					dojo.byId("daterange").innerHTML =
 						"Water temperature (C) <b>" + startTime + "</b> to <b>" + endTime + "</b>";
 				});
+
+                map.on("click", function(evt) {
+                    selectGraphicsNearSelectedOne(evt, "Time", "Temperature", map.getLayer(visibleLayerID[visibleLayerName[0]]));
+                });
 			});
 		});
 	});

@@ -56,3 +56,51 @@ function getRandomAvatar() {
 		"http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-short-hair-girl.png"];
 	return defaultAvatars[Math.floor(Math.random() * defaultAvatars.length)]
 }
+
+// Check if a user clicked on an incident feature.
+function selectGraphicsNearSelectedOne(evt, oxLabel, oyLabel, layer) {
+    let valuesToPlot = [];
+
+    let latitude = evt.graphic.attributes.Latitude_D;
+    let longitude = evt.graphic.attributes.Longitude_D;
+
+    let graphics = layer.graphics;
+
+    graphics.map(function(graphic) {
+        let attributes = graphic.attributes;
+        if(attributes.Latitude_D === latitude
+            && attributes.Longitude_D === longitude) {
+            valuesToPlot.push([new Date(attributes.Data), attributes.Azot__])
+        }
+    });
+
+    valuesToPlot.sort(function(a, b) {
+        return a[0] - b[0];
+    });
+
+    drawBackgroundColor(valuesToPlot, oxLabel, oyLabel)
+}
+
+function drawBackgroundColor(dataToPLot, oxLabel, oyLabel) {
+    var data = new google.visualization.DataTable();
+    data.addColumn('date', 'X');
+    data.addColumn('number', oyLabel);
+
+    if(!dataToPLot) {
+        return;
+    }
+    data.addRows(dataToPLot);
+
+    var options = {
+        hAxis: {
+            title: oxLabel
+        },
+        vAxis: {
+            title: oyLabel
+        },
+        backgroundColor: '#f1f8e9'
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+}
