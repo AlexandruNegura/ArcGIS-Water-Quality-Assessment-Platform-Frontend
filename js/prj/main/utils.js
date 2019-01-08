@@ -59,48 +59,59 @@ function getRandomAvatar() {
 
 // Check if a user clicked on an incident feature.
 function selectGraphicsNearSelectedOne(evt, oxLabel, oyLabel, layer) {
-    let valuesToPlot = [];
+	if (!evt.graphic)
+		return;
 
-    let latitude = evt.graphic.attributes.Latitude_D;
-    let longitude = evt.graphic.attributes.Longitude_D;
+	let valuesToPlot = [];
+	let latitude = evt.graphic.attributes.Latitude_D;
+	let longitude = evt.graphic.attributes.Longitude_D;
 
-    let graphics = layer.graphics;
+	let graphics = layer.graphics;
 
-    graphics.map(function(graphic) {
-        let attributes = graphic.attributes;
-        if(attributes.Latitude_D === latitude
-            && attributes.Longitude_D === longitude) {
-            valuesToPlot.push([new Date(attributes.Data), attributes.Azot__])
-        }
-    });
+	graphics.map(function (graphic) {
+		let attributes = graphic.attributes;
+		if (attributes.Latitude_D === latitude
+			&& attributes.Longitude_D === longitude) {
+			valuesToPlot.push([new Date(attributes.Data), attributes.Azot__])
+		}
+	});
 
-    valuesToPlot.sort(function(a, b) {
-        return a[0] - b[0];
-    });
+	valuesToPlot.sort(function (a, b) {
+		return a[0] - b[0];
+	});
 
-    drawBackgroundColor(valuesToPlot, oxLabel, oyLabel)
+	drawBackgroundColor(valuesToPlot, oxLabel, oyLabel, latitude, longitude)
 }
 
-function drawBackgroundColor(dataToPLot, oxLabel, oyLabel) {
-    var data = new google.visualization.DataTable();
-    data.addColumn('date', 'X');
-    data.addColumn('number', oyLabel);
+function drawBackgroundColor(dataToPLot, oxLabel, oyLabel, latitude, longitude) {
+	var data = new google.visualization.DataTable();
+	data.addColumn('date', 'X');
+	data.addColumn('number', oyLabel);
 
-    if(!dataToPLot) {
-        return;
-    }
-    data.addRows(dataToPLot);
+	if (!dataToPLot) {
+		return;
+	}
+	data.addRows(dataToPLot);
+	$('#myModal').modal('show');
 
-    var options = {
-        hAxis: {
-            title: oxLabel
-        },
-        vAxis: {
-            title: oyLabel
-        },
-        backgroundColor: '#f1f8e9'
-    };
+	setTimeout(function () {
+		var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+		$("#lat").text(latitude);
+		$("#lon").text(longitude);
 
-    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
+		var options = {
+			hAxis: {
+				title: oxLabel
+			},
+			vAxis: {
+				title: oyLabel
+			},
+			chartArea: {
+				width: "70%",
+				height: "80%",
+			}
+		};
+
+		chart.draw(data, options);
+	}, 500);
 }

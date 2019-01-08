@@ -56,8 +56,20 @@
     <div id="timeSliderDiv"></div>
 </div>
 
-<div id="chart_div" align="center"></div>
-
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div align="center">
+                    Info for point Lat: <span id="lat"></span>, Lon: <span id="lon"></span>
+                </div>
+                <div id="chart_div" style="margin-top: 25px"></div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Page specific -->
 <script defer src="../js/prj/content/pag_4.js"></script>
 <script defer src="../js/prj/main/utils.js"></script>
