@@ -97,7 +97,7 @@ $(window).on("load", function () {
 				});
 
 				map.on("click", function(evt) {
-                    selectGraphicsNearSelectedOne(evt, "Time", "Nitrogen", map.getLayer(visibleLayerID[visibleLayerName[0]]));
+                    selectGraphicsNearSelectedOne(evt, "Time", "Azot", map.getLayer(visibleLayerID[visibleLayerName[0]]));
                 });
 
             });
