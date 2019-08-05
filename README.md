@@ -1,4 +1,4 @@
-# poliloco
+# ArcGIS-Water-Quality-Assessment-Platform-Frontend
 
 ## How to run
 The website must be run as a server for security and Cross-Origins related problems. To run the website, first we need the following packages:
